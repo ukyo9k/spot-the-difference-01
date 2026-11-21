@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lantern Lane — Spot the Difference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main id="app">
+  <header id="hud">
+    <div class="hud-left">
+      <h1>Lantern Lane</h1>
+      <p class="tagline">Spot the difference &middot; three hand-drawn scenes</p>
+    </div>
+    <div class="hud-stats">
+      <div class="stat"><span class="label">Level</span><span id="levelName">1 &middot; Lantern Lane</span></div>
+      <div class="stat"><span class="label">Found</span><span id="foundCounter">0 / 7</span></div>
+      <div class="stat"><span class="label">Remaining</span><span id="remainCounter">7</span></div>
+      <div class="stat"><span class="label">Time</span><span id="timeLeft">2:30</span></div>
+      <div class="stat"><span class="label">Score</span><span id="scoreValue">0</span></div>
+      <div class="stat"><span class="label">Hints</span><span id="hintValue">3</span></div>
+    </div>
+  </header>
+
+  <section id="panels" aria-label="The two pictures">
+    <figure class="panel">
+      <figcaption>Picture A</figcaption>
+      <canvas id="canvasA" width="560" height="420"></canvas>
+    </figure>
+    <figure class="panel">
+      <figcaption>Picture B &mdash; find what changed</figcaption>
+      <canvas id="canvasB" width="560" height="420"></canvas>
+    </figure>
+  </section>
+
+  <section id="controls">
+    <button id="hintBtn" type="button">Hint (H) &mdash; reveals one difference</button>
+    <button id="restartBtn" type="button">Restart level (R)</button>
+    <button id="soundBtn" type="button" aria-pressed="true">Sound: on (M)</button>
+    <p id="message" role="status">Click a difference on either picture &mdash; or move with the arrow keys and press Enter.</p>
+  </section>
+
+  <div id="overlay" class="hidden">
+    <div id="overlayCard">
+      <h2 id="overlayTitle"></h2>
+      <p id="overlayText"></p>
+      <div id="overlayStats"></div>
+      <button id="overlayBtn" type="button"></button>
+    </div>
+  </div>
+
+  <footer>
+    <p>Keyboard: arrows move the crosshair &middot; Enter/Space checks a spot &middot; H hint &middot; R restart &middot; M sound. A wrong click costs 5 seconds and 10 points; a hint costs 25 points.</p>
+    <p class="credit">Lantern Lane is an original game: all art is drawn in code, no photos, no borrowed characters.</p>
+  </footer>
+</main>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
